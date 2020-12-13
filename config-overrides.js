@@ -45,7 +45,7 @@ const addCustomize = () => (config) => {
         cwd: process.cwd(),
       }),
       // 本地日志输出
-      new DashboardPlugin()
+      new DashboardPlugin(),
     );
   }
   if (isProduction) {
@@ -59,7 +59,7 @@ const addCustomize = () => (config) => {
     // 美化打包后 js 文件名
     config.output.chunkFilename = config.output.chunkFilename.replace(
       '.chunk',
-      ''
+      '',
     );
     // 美化打包后 css 文件名
     invade(config.plugins, 'MiniCssExtractPlugin', (e) => {
@@ -89,7 +89,7 @@ const addCustomize = () => (config) => {
       new ScriptExtHtmlWebpackPlugin({
         // `runtime` must same as runtimeChunk name. default is `runtime`
         inline: /runtime\..*\.js$/,
-      })
+      }),
     );
     config.optimization.runtimeChunk = 'single';
   }
@@ -175,7 +175,7 @@ module.exports = {
       // 进度条
       new WebpackBar({
         profile: true,
-      })
+      }),
     ),
 
     // 开发模式下生成  css souceMap
@@ -190,7 +190,7 @@ module.exports = {
         if (processor && processor.loader.includes('less-loader')) {
           processor.options.sourceMap = true; // sass-loader
         }
-      })
+      }),
   ),
   devServer: overrideDevServer(devServerConfig()),
 
