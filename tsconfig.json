@@ -4,7 +4,11 @@
     "module": "esnext",
     "importHelpers": true,
     "jsx": "react-jsx",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -17,7 +21,13 @@
     "isolatedModules": true,
     "noEmit": true,
     "sourceMap": true,
+    "strictNullChecks": false,
     "baseUrl": "./"
   },
-  "include": ["mock/**/*", "src/**/*", "config/**/*", "src/components/.tsx"]
+  "include": [
+    "mock/**/*",
+    "src/**/*",
+    "config/**/*",
+    "src/components/.tsx"
+  ]
 }

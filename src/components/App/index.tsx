@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import React, { FC, useRef, RefObject } from 'react';
+import useScroll from '../../utils/hooks/useMousePosition';
 import logo from './logo.svg';
 import styles from './App.module.less';
 
@@ -7,8 +8,10 @@ import styles from './App.module.less';
 // console.log('====================================');
 
 const App: FC = () => {
+  const divRef = useRef(null);
+  const { position } = useScroll<HTMLDivElement>(divRef);
   return (
-    <div className={`${styles.App} ${styles.text}`}>
+    <div className={`${styles.App} ${styles.text}`} ref={divRef}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
